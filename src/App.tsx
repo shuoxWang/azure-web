@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -7,23 +7,36 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 //pages import
 import LoginPage from './pages/LoginPage/LoginPage';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Query from './pages/Query/Query';
+import Dashboards from './pages/Dashboards/Dashboards';
+import Sidebar from './components/Sidebar/Sidebar';
+import ADXNavbar from './components/ADXNavbar/ADXNavbar';
 
 function App() {
+  const [isSidebarCollapsed, setisSidebarCollapsed] = useState(false);
+  const toggleSidebar = () => {
+    setisSidebarCollapsed(!isSidebarCollapsed);
+  }
   return (
     <div className="App">
-    <AuthProvider>
-      <Router>
-       <Routes>
-          <Route path="/" element={<LoginPage/>}></Route>
-          <Route path="/dashboard" element={<Dashboard/>}></Route>
-          {/* <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}></Route> */}
-        </Routes>
-      </Router>
-      
-
-      
-    </AuthProvider>
+      <AuthProvider>
+        <Router>
+          <div className='All-content'>
+            <ADXNavbar toggleSidebar={toggleSidebar}/>
+            <div className='ADX-content-wrapper'>
+              <Sidebar collapsed={isSidebarCollapsed}/>
+              <div className="main-content">
+                <Routes>
+                  <Route path="/" element={<LoginPage />}></Route>
+                  <Route path="/query" element={<Query />}></Route>
+                  <Route path="/dashboards" element={<Dashboards />}></Route>
+                  {/* <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}></Route> */}
+                </Routes>
+              </div>
+            </div>
+          </div>
+        </Router>
+      </AuthProvider>
     </div>
 
   );

@@ -7,3 +7,8 @@
     height: 150px;
     text-align: left;
 }
+.query-button {
+    display: flex;
+    text-align: left;
+    margin-bottom: 5px;
+}

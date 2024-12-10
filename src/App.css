@@ -1,5 +1,26 @@
 .App {
+  display: flex;
   text-align: center;
+  height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.main-content.shifted {
+  margin-left: 0;
+}
+.ADX-content-wrapper{
+  display: flex;
+  height: 100vh;
+}
+
+.All-content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .App-logo {

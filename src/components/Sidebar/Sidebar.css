@@ -1,0 +1,40 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    width: 66px;
+    background-color: #f0f0f0;
+    transition: width .1s linear, opacity 0s .1s;
+    height: 100%;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    padding: 6px 10px;
+    text-align: center;
+}
+
+.nav-link-custom {
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+}
+
+.nav-link-custom:hover {
+    color: #007bff
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+.collapsed.collapsed {
+    transform: translateX(-100%);
+    opacity: 0;
+}
