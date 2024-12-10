@@ -1,0 +1,8 @@
+.login-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+.button-container {
+    margin-top: 10px;
+}
