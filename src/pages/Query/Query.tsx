@@ -69,16 +69,16 @@ const Dashboard = () => {
             headerName: key.charAt(0).toUpperCase() + key.slice(1),
             sortable: true,
             filter: true,
-            valueFormatter: (params: any) => {
-                if (typeof params.value === 'object' && params.value != null) {
-                    return JSON.stringify(params.value, null, 2);
-                }
-                return params.value;
-            },
-            // ...(typeof flatData[0][key] === 'object' && {
-            //     cellRenderer: ScrollableJsonCell,
-            // }),
-            // autoHeight: true,
+            // valueFormatter: (params: any) => {
+            //     if (typeof params.value === 'object' && params.value != null) {
+            //         return JSON.stringify(params.value, null, 2).slice(0, 200);
+            //     }
+            //     return params.value;
+            // },
+            ...(typeof flatData[0][key] === 'object' && {
+                cellRenderer: ScrollableJsonCell,
+            }),
+            autoHeight: true,
         }))
     }, [flatData]);
 
@@ -135,10 +135,11 @@ const Dashboard = () => {
                     columnDefs={columnDefs}
                     pagination={true}
                     paginationPageSize={10}
-                    rowBuffer={20}
+                    rowBuffer={10}
                     defaultColDef={{ resizable: true }}
                     suppressColumnVirtualisation={false}
                     suppressRowVirtualisation={false}
+                    suppressAnimationFrame={false}
                     debounceVerticalScrollbar={true}
                     domLayout="normal"
                     // onBodyScroll={handleBodyScroll}
