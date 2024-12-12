@@ -1,14 +1,39 @@
+.queryPage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
 .queryBox {
     margin-top: 15px;
-    height: 200px;
-    
+    height: 50%;
+    overflow-y: auto;
+
+    .queryInput {
+        text-align: left;
+    }
+    button.query-button {
+        display: flex;
+        text-align: left;
+        margin-bottom: 5px;
+        background-color: #0F6CBD;
+        font-size: 14px;
+    }   
 }
-.queryInput {
-    height: 150px;
-    text-align: left;
+.resize-bar {
+    cursor: ns-resize;
+    border-width: 3px 0px;
+    border-color: transparent;
+    box-sizing: border-box;
+    height: 4px;
+    margin-bottom: 0px;
+    z-index: 1;
+    flex-shrink: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)) 0px 2px / 100% 1px no-repeat content-box content-box;
 }
-.query-button {
-    display: flex;
-    text-align: left;
-    margin-bottom: 5px;
+
+.ag-theme-alpine.ag-grid-container {
+    height: 50%;
+    overflow-x: auto
 }
