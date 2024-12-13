@@ -16,7 +16,7 @@ const ScrollableJsonCell = ({ value }: { value: any }) => {
     return (
         <>
             <div style={style} onDoubleClick={() => handleDoubleClick(value)}>
-                {JSON.stringify(value, null, 2).slice(0,200)}
+                {JSON.stringify(value, null, 2).slice(0,250)}
             </div>
 
             {isModalOpen && (

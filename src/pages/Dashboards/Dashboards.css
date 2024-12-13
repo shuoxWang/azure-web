@@ -1,0 +1,6 @@
+.dashboardPage {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 51px);
+    width: 100%;
+}

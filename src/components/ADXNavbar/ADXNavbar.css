@@ -1,6 +1,8 @@
 .navbar {
     background-color: #0c3b5e;
-    height: 7vh;
+    height: 51px;
+    width: 100%;
+    display: flex;
 }
 
 .button-custom {

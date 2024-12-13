@@ -2,21 +2,23 @@
   display: flex;
   text-align: center;
   height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
-
-.All-content{
-  display: flex;
-  flex-direction: column;
+.All-content {
   width: 100%;
 }
 
 .ADX-content-wrapper{
   display: flex;
+  flex-direction: row;
+  flex: 1;
 }
 
 .main-content {
-  height: 93vh;
-  flex-grow: 1;
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh-51px);
   margin-left: 20px;
 }
 

@@ -5,7 +5,7 @@
     width: 66px;
     background-color: #f0f0f0;
     transition: width .1s linear, opacity 0s .1s;
-    height: 100%;
+    height: calc(100vh-51px);
 }
 
 .sidebar-content {
