@@ -96,8 +96,7 @@ const Dashboard = () => {
                 />
             </div>
             <div className="resize-bar" ></div>
-
-
+           
             <div className="ag-theme-alpine ag-grid-container">
                 <AgGridReact
                     rowData={rowData[0]}
