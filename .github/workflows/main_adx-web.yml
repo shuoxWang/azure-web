@@ -55,7 +55,7 @@ jobs:
         run: unzip release.zip
       
       - name: Login to Azure
-        uses: az config set core.encrypt_token_cache=false; azure/login@v1.5.0
+        uses: azure/login@v2.0
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_607022C9521B42B88AF30F9C8D8BC4FA }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CDBACD2DE646478783A121E338BA2428 }}
