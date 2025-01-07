@@ -5,7 +5,7 @@ import { AgGridReact } from "ag-grid-react";
 const Dashboards = () => {
     const { rowData, loading, columnDefs, fetchData, autoSizeStrategy } = useQueryData();
 
-    const query = "TechnicalInsights | take 10 | project Id, Slug, Symbol, Exchange, Interval, CandleMetrics, AwesomeIndicator, WillyIndicator, MacdIndicator, MovingAveragesIndicator, RetracementsIndicator, RsiIndicator, ObvIndicator, BopIndicator, CciIndicator, CmfIndicator, ForceIndexIndicator, KeyReversalsIndicator, MarubozuIndicator, MfiIndicator, SqueezeIndicator, TrixIndicator, UltimateIndicator, TdSequentialIndicator, DateIngested";
+    const query = "TechnicalInsights | take 20 | project Id, Slug, Symbol, Exchange, Interval, CandleMetrics, AwesomeIndicator, WillyIndicator, MacdIndicator, MovingAveragesIndicator, RetracementsIndicator, RsiIndicator, ObvIndicator, BopIndicator, CciIndicator, CmfIndicator, ForceIndexIndicator, KeyReversalsIndicator, MarubozuIndicator, MfiIndicator, SqueezeIndicator, TrixIndicator, UltimateIndicator, TdSequentialIndicator, DateIngested";
     useEffect(() => {
         fetchData(query);
     }, []);
