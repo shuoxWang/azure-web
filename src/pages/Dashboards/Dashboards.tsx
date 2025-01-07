@@ -24,7 +24,7 @@ const Dashboards = () => {
                     suppressAnimationFrame={false}
                     debounceVerticalScrollbar={true}
                     domLayout="normal"
-                    autoSizeStrategy={autoSizeStrategy}
+                    
                 />
             </div>
             <div className="ag-theme-alpine" style={{ height: 400, padding: 10 }}>
@@ -38,7 +38,7 @@ const Dashboards = () => {
                     suppressAnimationFrame={false}
                     debounceVerticalScrollbar={true}
                     domLayout="normal"
-                    autoSizeStrategy={autoSizeStrategy}
+                    
                 />
             </div>
             <div className="ag-theme-alpine" style={{ height: 400, padding: 10 }}>
@@ -52,7 +52,7 @@ const Dashboards = () => {
                     suppressAnimationFrame={false}
                     debounceVerticalScrollbar={true}
                     domLayout="normal"
-                    autoSizeStrategy={autoSizeStrategy}
+                    
                 />
             </div>
             <div className="ag-theme-alpine" style={{ height: 400, padding: 10 }}>
@@ -66,7 +66,7 @@ const Dashboards = () => {
                     suppressAnimationFrame={false}
                     debounceVerticalScrollbar={true}
                     domLayout="normal"
-                    autoSizeStrategy={autoSizeStrategy}
+                    
                 />
             </div>
             <div className="ag-theme-alpine" style={{ height: 400, padding: 10 }}>
@@ -80,7 +80,7 @@ const Dashboards = () => {
                     suppressAnimationFrame={false}
                     debounceVerticalScrollbar={true}
                     domLayout="normal"
-                    autoSizeStrategy={autoSizeStrategy}
+                    
                 />
             </div>
         </div>
