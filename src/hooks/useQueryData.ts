@@ -34,7 +34,7 @@ export const useQueryData = () => {
                 cellRenderer: ScrollableJsonCell,
             }),
             //initialWidth: 500,
-            autoHeight: true,
+            autoHeight: false,
             wrapText: false,
             resizable: true
             
