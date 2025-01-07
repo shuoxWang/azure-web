@@ -33,10 +33,10 @@ export const useQueryData = () => {
             ...(typeof flatData[0][key] === 'object' && {
                 cellRenderer: ScrollableJsonCell,
             }),
-            initialWidth: 10,
+            //initialWidth: 500,
             autoHeight: true,
-            wrapText: true,
-            resizable: false
+            wrapText: false,
+            resizable: true
             
         }))
     }, [flatData]);
