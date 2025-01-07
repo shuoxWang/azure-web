@@ -5,7 +5,7 @@ import { AgGridReact } from "ag-grid-react";
 const Dashboards = () => {
     const { rowData, loading, columnDefs, fetchData, autoSizeStrategy } = useQueryData();
 
-    const query = "TechnicalInsights | project Id, Slug, Symbol, Interval, RetracementsIndicator";
+    const query = "TechnicalInsights | take 10";
     useEffect(() => {
         fetchData(query);
     }, []);
