@@ -41,3 +41,16 @@
     height: 50%;
     overflow-x: auto !important
 }
+.rows-count-tab {
+    position: relative;
+}
+.rows-records {
+    display: flex;
+    text-align: right;
+}
+.number-icon {
+    width: 14px;
+    height: 14px;
+    margin-top: 5px;
+    margin-right: 5px;
+}

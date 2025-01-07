@@ -17,7 +17,7 @@ const Dashboards = () => {
                 <AgGridReact
                     rowData={rowData[0]}
                     columnDefs={columnDefs}
-                    rowBuffer={10}
+                    rowBuffer={20}
                     defaultColDef={{ resizable: true }}
                     suppressColumnVirtualisation={false}
                     suppressRowVirtualisation={false}
@@ -31,7 +31,7 @@ const Dashboards = () => {
                 <AgGridReact
                     rowData={rowData[0]}
                     columnDefs={columnDefs}
-                    rowBuffer={10}
+                    rowBuffer={20}
                     defaultColDef={{ resizable: true }}
                     suppressColumnVirtualisation={false}
                     suppressRowVirtualisation={false}
@@ -45,7 +45,7 @@ const Dashboards = () => {
                 <AgGridReact
                     rowData={rowData[0]}
                     columnDefs={columnDefs}
-                    rowBuffer={10}
+                    rowBuffer={20}
                     defaultColDef={{ resizable: true }}
                     suppressColumnVirtualisation={false}
                     suppressRowVirtualisation={false}
@@ -59,7 +59,7 @@ const Dashboards = () => {
                 <AgGridReact
                     rowData={rowData[0]}
                     columnDefs={columnDefs}
-                    rowBuffer={10}
+                    rowBuffer={20}
                     defaultColDef={{ resizable: true }}
                     suppressColumnVirtualisation={false}
                     suppressRowVirtualisation={false}
@@ -73,7 +73,7 @@ const Dashboards = () => {
                 <AgGridReact
                     rowData={rowData[0]}
                     columnDefs={columnDefs}
-                    rowBuffer={10}
+                    rowBuffer={20}
                     defaultColDef={{ resizable: true }}
                     suppressColumnVirtualisation={false}
                     suppressRowVirtualisation={false}

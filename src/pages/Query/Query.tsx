@@ -8,26 +8,13 @@ import CodeMirror from "@uiw/react-codemirror";
 import { sql } from '@codemirror/lang-sql';
 import ScrollableJsonCell from "../../components/ScrollableJsonCell/ScrollableJsonCell";
 import "./Query.css"
-import {useQueryData} from "../../hooks/useQueryData";
-
+import { useQueryData } from "../../hooks/useQueryData";
+import { useCreateGrid } from "../../hooks/useCreateGrid";
+import { InfiniteRowModelModule } from "@ag-grid-community/infinite-row-model";
 
 const Dashboard = () => {
     const [query, setQuery] = useState("");
-    const { rowData, loading, fetchData, columnDefs, autoSizeStrategy} = useQueryData();
-    // const [gridHeight, setGridHeight] = useState(400);
-    // const [startY, setStartY] = useState(0);
-    // const autoSizeStrategy: SizeColumnsToFitGridStrategy | SizeColumnsToFitProvidedWidthStrategy | SizeColumnsToContentStrategy= {
-    //     type: "fitCellContents",
-    //     // type: "fitGridWidth",
-    //     // defaultMaxWidth: 200
-    //     // columnLimits: [
-    //     //   {
-    //     //     colId: "country",
-    //     //     minWidth: 900,
-    //     //   },
-    //     // ],
-    //   };
-
+    const { rowData, loading, fetchData, columnDefs, autoSizeStrategy, rowsCount} = useQueryData();
     const handleQuery = async () => {
         if (!query) {
             alert("Please enter a query!")
@@ -35,51 +22,6 @@ const Dashboard = () => {
         }
         fetchData(query);
     };
-
-    // const fetchData = async () => {
-    //     try {
-    //         setLoading(true);
-    //         const queryData = await authService.getQueryData(query);
-    //         setRowData([queryData.data]);
-    //         setLoading(false);
-
-    //     } catch (error) {
-    //         console.log("Error fetching data:", error);
-    //         setLoading(false);
-    //     }
-    // };
-
-    // const flatData = rowData.flat();
-    // const columnDefs = useMemo(() => {
-    //     return Object.keys(flatData[0] || {}).map((key) => ({
-    //         field: key,
-    //         headerName: key.charAt(0).toUpperCase() + key.slice(1),
-    //         sortable: true,
-    //         filter: true,
-    //         ...(typeof flatData[0][key] === 'object' && {
-    //             cellRenderer: ScrollableJsonCell,
-    //         }),
-    //         autoHeight: true,
-    //     }))
-    // }, [flatData]);
-
-    // const handleMouseDown = (e: any) => {
-    //     setStartY(e.clientY);
-    //     document.addEventListener('mousemove', handleMouseMove);
-    //     document.addEventListener('mouseup', handleMouseUp);
-    // };
-    // const handleMouseMove = (e: any) => {
-    //     const delta = e.clientY - startY;
-    //     setGridHeight((prevHeight) => prevHeight + delta)
-    //     setStartY(e.clientY);
-    // };
-
-    // const handleMouseUp = () => {
-    //     document.removeEventListener('mousemove', handleMouseMove);
-    //     document.removeEventListener('mouseup', handleMouseUp);
-    // }
-
-
 
     return (
         <div className="queryPage">
@@ -96,12 +38,17 @@ const Dashboard = () => {
                 />
             </div>
             <div className="resize-bar" ></div>
-           
+            <div className="rows-count-tab">
+                <div className="rows-records">
+                    <img src="/numbered-list-svgrepo-com.svg" alt="number-icon" className="number-icon" />
+                    <p>{rowsCount} records</p>
+                </div>
+            </div>
+
             <div className="ag-theme-alpine ag-grid-container">
                 <AgGridReact
-                    rowData={rowData[0]}
                     columnDefs={columnDefs}
-                    rowBuffer={10}
+                    rowData={rowData[0]}
                     defaultColDef={{ resizable: true }}
                     suppressColumnVirtualisation={false}
                     suppressRowVirtualisation={false}
@@ -110,7 +57,6 @@ const Dashboard = () => {
                     domLayout="normal"
                     autoSizeStrategy={autoSizeStrategy}
                 />
-
             </div>
         </div>
     );

@@ -23,6 +23,7 @@ export const useQueryData = () => {
     };
 
     const flatData = rowData.flat();
+    const rowsCount = Object.keys(flatData).length;
     const columnDefs = useMemo(() => {
         return Object.keys(flatData[0] || {}).map((key) => ({
             field: key,
@@ -36,6 +37,6 @@ export const useQueryData = () => {
         }))
     }, [flatData]);
 
-    return { rowData, loading, fetchData, columnDefs, autoSizeStrategy};
+    return { rowData, loading, fetchData, columnDefs, autoSizeStrategy, rowsCount};
 
 }

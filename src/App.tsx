@@ -9,6 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 //pages import
 import LoginPage from './pages/LoginPage/LoginPage';
 import Query from './pages/Query/Query';
+//import Query from './pages/Query/Query copy';
 //import Query from './pages/Query/QueryInfiniteScroll';
 import Dashboards from './pages/Dashboards/Dashboards';
 import Sidebar from './components/Sidebar/Sidebar';

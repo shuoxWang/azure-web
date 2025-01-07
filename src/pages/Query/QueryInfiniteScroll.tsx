@@ -26,7 +26,6 @@ ModuleRegistry.registerModules([InfiniteRowModelModule]);
 let gridApi: GridApi<TechnicalInsightsData>;
 
 const Dashboard = () => {
-
     const initializeGrid = () => {
         const gridOptions: GridOptions<TechnicalInsightsData> = {
             columnDefs: [
@@ -317,6 +316,7 @@ const Dashboard = () => {
         const queryData = await authService.getQueryData(query);
         const data = queryData.data;
         console.log(data);
+    
         const dataSource: IDatasource = {
             rowCount: undefined, // behave as infinite scroll
             getRows: (params: IGetRowsParams) => {
